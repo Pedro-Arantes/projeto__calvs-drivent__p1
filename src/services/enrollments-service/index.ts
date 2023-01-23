@@ -1,9 +1,11 @@
 import { request } from "@/utils/request";
-import { notFoundError, requestError } from "@/errors";
+import { notFoundError, /*requestError*/ } from "@/errors";
 import addressRepository, { CreateAddressParams } from "@/repositories/address-repository";
 import enrollmentRepository, { CreateEnrollmentParams } from "@/repositories/enrollment-repository";
 import { exclude } from "@/utils/prisma-utils";
 import { Address, Enrollment } from "@prisma/client";
+//import { ViaCEPAddress } from "@/protocols";
+//import { AxiosResponse } from "axios";
 
 async function getAddressFromCEP(cep: string) {
   if (cep.length < 5) {
